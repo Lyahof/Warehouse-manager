@@ -4,7 +4,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { useReceiptIndigo } from "./useReceiptIndigo";
+import { useCreateIndigoReceipt } from "./useCreateIndigoReceipt";
 
 function IndigoReceiptForm({
   indigoName,
@@ -15,7 +15,7 @@ function IndigoReceiptForm({
 }) {
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
-  const { updateIndigoPlus, isPending } = useReceiptIndigo(indigoName);
+  const { updateIndigoPlus, isPending } = useCreateIndigoReceipt(indigoName);
 
   function onSubmit(data) {
     updateIndigoPlus(
@@ -53,7 +53,7 @@ function IndigoReceiptForm({
       </FormRow>
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

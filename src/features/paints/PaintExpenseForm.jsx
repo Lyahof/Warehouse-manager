@@ -4,7 +4,7 @@ import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import { useExpencePaint } from "./useExpencePaint";
+import { useCreatePaintExpence } from "./useCreatePaintExpence";
 
 function PaintExpenseForm({
   paintName,
@@ -16,7 +16,7 @@ function PaintExpenseForm({
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  const { updatePaintMinus, isPending } = useExpencePaint(paintName);
+  const { updatePaintMinus, isPending } = useCreatePaintExpence(paintName);
 
   function onSubmit(data) {
     updatePaintMinus(
@@ -56,7 +56,7 @@ function PaintExpenseForm({
 
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

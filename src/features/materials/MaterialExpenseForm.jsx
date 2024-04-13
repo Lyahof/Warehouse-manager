@@ -67,7 +67,7 @@ function MaterialExpenseForm({
 
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

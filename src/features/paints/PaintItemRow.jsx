@@ -27,7 +27,7 @@ const Quantity = styled.div`
   color: var(--color-${(props) => props.type}-700);
 `;
 
-function PaintRow({ paint }) {
+function PaintItemRow({ paint }) {
   const navigate = useNavigate();
   const { deletePaint, isDeleting } = useDeletePaint();
 
@@ -63,7 +63,7 @@ function PaintRow({ paint }) {
           ? "не требуется"
           : "требуется"}
       </Tag>
-      <VendorCode>{vendorCode}</VendorCode>
+      <VendorCode>{vendorCode ? vendorCode : "-"}</VendorCode>
 
       <Modal>
         <Modal.Open opens="update-plus">
@@ -128,4 +128,4 @@ function PaintRow({ paint }) {
   );
 }
 
-export default PaintRow;
+export default PaintItemRow;

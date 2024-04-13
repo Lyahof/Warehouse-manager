@@ -3,7 +3,7 @@ import { toast } from "react-hot-toast";
 import { updateOtherMinus as updateOtherMinusApi } from "../../services/APIOthers";
 
 //Вызываем ф-ию updateOtherMinus для отгрузки чего-либо из таблицы others через react-query
-export function useCreateExpenseOthers(otherName){
+export function useCreateOtherExpense(otherName){
 	const queryClient = useQueryClient();
 
 	const{mutate: updateOtherMinus, isPending} = useMutation({

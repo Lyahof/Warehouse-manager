@@ -4,7 +4,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { useCreateReceiptOther } from "./useCreateReceiptOther";
+import { useCreateOtherReceipt } from "./useCreateOtherReceipt";
 
 function OtherReceiptForm({
   otherName,
@@ -15,7 +15,7 @@ function OtherReceiptForm({
 }) {
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
-  const { updateOtherPlus, isPending } = useCreateReceiptOther(otherName);
+  const { updateOtherPlus, isPending } = useCreateOtherReceipt(otherName);
 
   function onSubmit(data) {
     updateOtherPlus(
@@ -53,7 +53,7 @@ function OtherReceiptForm({
       </FormRow>
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

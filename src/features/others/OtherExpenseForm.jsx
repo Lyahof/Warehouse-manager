@@ -4,7 +4,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { useCreateExpenseOthers } from "./useCreateExpenseOthers";
+import { useCreateOtherExpense } from "./useCreateOtherExpense";
 
 function OtherExpenseForm({
   otherName,
@@ -16,7 +16,7 @@ function OtherExpenseForm({
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  const { updateOtherMinus, isPending } = useCreateExpenseOthers(otherName);
+  const { updateOtherMinus, isPending } = useCreateOtherExpense(otherName);
 
   function onSubmit(data) {
     updateOtherMinus(
@@ -53,7 +53,7 @@ function OtherExpenseForm({
 
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

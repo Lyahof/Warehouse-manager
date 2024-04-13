@@ -2,7 +2,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { toast } from "react-hot-toast";
 import { updatePaintPlus as updatePaintPlusApi } from "../../services/APIPaints";
 
- export function useReceiptPaint(paintName){
+ export function useCreatePaintReceipt(paintName){
 	const queryClient = useQueryClient();
 
 	const { mutate: updatePaintPlus, isPending } = useMutation({

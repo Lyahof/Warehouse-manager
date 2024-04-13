@@ -9,7 +9,7 @@ import { updateMaterialPlus as updateMaterialPlusApi } from "../../services/APIM
 	const { mutate: updateMaterialPlus, isPending } = useMutation({
 		mutationFn: (data) => updateMaterialPlusApi(data),
 		onSuccess: () => {
-			toast.success(`${materialName} успешно добавлен в таблицу`);
+			toast.success(`Поступление ${materialName} успешно добавлен в таблицу`);
 			queryClient.invalidateQueries({ queryKey: ["materials"] });
 		},
 		onError: (err) => toast.error(err.message),

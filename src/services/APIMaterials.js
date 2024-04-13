@@ -39,7 +39,7 @@ export async function getAllMaterialPayments(){
 	return materialPayments;
 }
 
-// Получает затраты на материалы для Дашборда. date д.б. в формате ISOString
+/* // Получает затраты на материалы для Дашборда. date д.б. в формате ISOString
 export async function getPaymentsAfterDate(tableName, queryDate) {
 	const { data, error } = await supabase
 		.from(tableName)
@@ -53,7 +53,7 @@ export async function getPaymentsAfterDate(tableName, queryDate) {
 	}
 
 	return data;
-}
+} */
 
 export async function getMaterialExpenses(materialExpenseId){
 	const {data, error} = await supabase
@@ -92,7 +92,7 @@ export async function createNewMaterial(newMaterial){
 
 		if(error){
 			console.error(error)
-			throw new Error('Не удалось создать строкув разделе "Разное"')
+			throw new Error('Не удалось создать запись в разделе "Материалы"')
 		}
 	return data;
 }

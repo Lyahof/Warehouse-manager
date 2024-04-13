@@ -4,7 +4,7 @@ import Button from "../../ui/Button";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
-import { useReceiptPaint } from "./useReceiptPaint";
+import { useCreatePaintReceipt } from "./useCreatePaintReceipt";
 
 function PaintReceiptForm({
   paintName,
@@ -16,7 +16,7 @@ function PaintReceiptForm({
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  const { updatePaintPlus, isPending } = useReceiptPaint(paintName);
+  const { updatePaintPlus, isPending } = useCreatePaintReceipt(paintName);
 
   function onSubmit(data) {
     updatePaintPlus(
@@ -56,7 +56,7 @@ function PaintReceiptForm({
 
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

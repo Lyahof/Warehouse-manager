@@ -4,7 +4,7 @@ import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
 import Button from "../../ui/Button";
-import { useExpenseIndigo } from "./useExpenseIndigo";
+import { useCreateIndigoExpense } from "./useCreateIndigoExpense";
 
 function IndigoExpenseForm({
   indigoName,
@@ -16,7 +16,7 @@ function IndigoExpenseForm({
   const { register, handleSubmit, reset, formState } = useForm();
   const { errors } = formState;
 
-  const { updateIndigoMinus, isPending } = useExpenseIndigo(indigoName);
+  const { updateIndigoMinus, isPending } = useCreateIndigoExpense(indigoName);
 
   function onSubmit(data) {
     updateIndigoMinus(
@@ -53,7 +53,7 @@ function IndigoExpenseForm({
 
       <FormRow label="Артикул">
         <Input
-          type="number"
+          type="text"
           id="vendorCode"
           value={vendorCode}
           disabled

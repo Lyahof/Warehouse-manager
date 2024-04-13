@@ -49,9 +49,11 @@ function CreateMaterialForm({ onCloseModal }) {
         <Input
           type="text"
           id="vendorCode"
-          {...register("vendorCode", {
+          {...register(
+            "vendorCode" /* , {
             required: "Это поле обязательно для заполнения",
-          })}
+          } */
+          )}
         />
       </FormRow>
 

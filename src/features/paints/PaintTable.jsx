@@ -1,5 +1,5 @@
 import Spinner from "../../ui/Spinner";
-import PaintRow from "./PaintRow";
+import PaintItemRow from "./PaintItemRow";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import { usePaints } from "./usePaints";
@@ -60,7 +60,7 @@ function PaintTable() {
         </Table.Header>
 
         <Table.Body
-          render={(paint) => <PaintRow paint={paint} key={paint.id} />}
+          render={(paint) => <PaintItemRow paint={paint} key={paint.id} />}
           data={sortedPaints}
         />
       </Table>

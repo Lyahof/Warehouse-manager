@@ -63,7 +63,7 @@ function IndigoItemRow({ indigoItem }) {
           ? "не требуется"
           : "требуется"}
       </Tag>
-      <VendorCode>{vendorCode}</VendorCode>
+      <VendorCode>{vendorCode ? vendorCode : "-"}</VendorCode>
 
       <Modal>
         <Modal.Open opens="update-indigo-plus">
