@@ -1,6 +1,5 @@
 import { useEffect, useRef } from "react";
 import styled from "styled-components";
-
 import Chart from "chart.js/auto";
 import Heading from "../../ui/Heading";
 
@@ -50,9 +49,22 @@ function PaymentChart({
   });
 
   const totalPrices = Object.values(monthlyData);
-  const months = Object.keys(monthlyData).map((month) => parseInt(month) + 1);
 
   useEffect(() => {
+    const months = [
+      "Январь",
+      "Февраль",
+      "Март",
+      "Апрель",
+      "Май",
+      "Июнь",
+      "Июль",
+      "Август",
+      "Сентябрь",
+      "Октябрь",
+      "Ноябрь",
+      "Декабрь",
+    ];
     if (chartInstance.current) {
       chartInstance.current.destroy();
     }
@@ -62,7 +74,7 @@ function PaymentChart({
     chartInstance.current = new Chart(ctx, {
       type: "bar",
       data: {
-        labels: months.map((month) => `${month} месяц`),
+        labels: months.map((month) => `${month}`),
         datasets: [
           {
             label: "Общие расходы на закупку",
@@ -81,7 +93,7 @@ function PaymentChart({
         },
       },
     });
-  }, [months, totalPrices]);
+  }, [totalPrices]);
 
   return (
     <StyledPaymentChart>

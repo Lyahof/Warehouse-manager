@@ -17,7 +17,7 @@ const Main = styled.main`
 `;
 
 const Container = styled.div`
-  max-width: 150rem;
+  max-width: 155rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
