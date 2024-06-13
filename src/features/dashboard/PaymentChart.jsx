@@ -2,6 +2,7 @@ import { useEffect, useRef } from "react";
 import styled from "styled-components";
 import Chart from "chart.js/auto";
 import Heading from "../../ui/Heading";
+import { formatCurrency } from "../../utils/DateHelpers";
 
 const StyledPaymentChart = styled.div`
   padding-top: 2.5rem;

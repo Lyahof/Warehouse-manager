@@ -19,15 +19,16 @@ function IndigoExpensesTable() {
   return (
     <>
       <Row type="horizontal">
-        <Heading as="h1">История списаний {indigoName}</Heading>
+        <Heading as="h2">История списаний {indigoName}</Heading>
         <ButtonText onClick={moveBack}>&larr;Назад</ButtonText>
       </Row>
 
-      <Table columns="2fr 1fr 0.7fr 1.2fr 0.5fr 0.1fr">
+      <Table columns="2fr 0.8fr 0.6fr 1fr 1fr 0.5fr 0.1fr">
         <Table.Header>
           <div>Наименование</div>
           <div>Дата отпуска</div>
           <div>Отпущено</div>
+          <div>Материал отпущен</div>
           <div>Материал получен</div>
           <div>Артикул</div>
         </Table.Header>

@@ -13,6 +13,7 @@ function OtherExpenseRow({ otherItemExpense }) {
     otherName,
     vendorCode,
     receiver,
+    distributor,
     shippingDate,
     shippedQuantity,
   } = otherItemExpense;
@@ -24,8 +25,9 @@ function OtherExpenseRow({ otherItemExpense }) {
     <Modal>
       <Table.Row>
         <p>{otherName}</p>
-        <p>{shippedQuantity} шт.</p>
+        <p>{shippedQuantity} шт</p>
         <p>{modifiedShippingDate} г</p>
+        <p>{distributor ? distributor : "не указано"}</p>
         <p>{receiver}</p>
         <p>{vendorCode}</p>
 

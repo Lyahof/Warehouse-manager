@@ -13,6 +13,7 @@ function PaintExpenseRow({ paintItem }) {
     paintName,
     vendorCode,
     receiver,
+    distributor,
     shippingDate,
     shippedQuantity,
   } = paintItem;
@@ -25,7 +26,8 @@ function PaintExpenseRow({ paintItem }) {
       <Table.Row>
         <p>{paintName}</p>
         <p>{modifiedShippingDate} г</p>
-        <p>{shippedQuantity} кг.</p>
+        <p>{shippedQuantity} кг</p>
+        <p>{distributor ? distributor : "не указано"}</p>
         <p>{receiver}</p>
         <p>{vendorCode}</p>
 

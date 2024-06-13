@@ -13,6 +13,7 @@ function IndigoExpenseRow({ indigoItemExpense }) {
     indigoName,
     vendorCode,
     receiver,
+    distributor,
     shippingDate,
     shippedQuantity,
   } = indigoItemExpense;
@@ -28,6 +29,7 @@ function IndigoExpenseRow({ indigoItemExpense }) {
         <p>{indigoName}</p>
         <p>{modifiedShippingDate} г</p>
         <p>{shippedQuantity} шт.</p>
+        <p>{distributor ? distributor : "не указано"}</p>
         <p>{receiver}</p>
         <p>{vendorCode}</p>
 

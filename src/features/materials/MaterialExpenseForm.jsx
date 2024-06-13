@@ -86,6 +86,17 @@ function MaterialExpenseForm({
         />
       </FormRow>
 
+      <FormRow label="Кем отпущено" error={errors?.receiver?.message}>
+        <Input
+          type="text"
+          id="distributor"
+          {...register("distributor", {
+            required: "Это поле обязательно для заполнения",
+            minLength: 2,
+          })}
+        />
+      </FormRow>
+
       <FormRow label="Дата отпуска" error={errors?.shippingDate?.message}>
         <Input
           type="date"

@@ -13,6 +13,7 @@ function MaterialExpenseRow({ material }) {
     materialName,
     vendorCode,
     receiver,
+    distributor,
     shippingDate,
     shippedQuantity,
   } = material;
@@ -24,8 +25,9 @@ function MaterialExpenseRow({ material }) {
     <Modal>
       <Table.Row>
         <p>{materialName}</p>
-        <p>{shippedQuantity} шт.</p>
+        <p>{shippedQuantity} м</p>
         <p>{modifiedShippingDate} г</p>
+        <p>{distributor ? distributor : "не указано"}</p>
         <p>{receiver}</p>
         <p>{vendorCode}</p>
 
