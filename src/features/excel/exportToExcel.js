@@ -12,7 +12,8 @@ const materialNames = {
 
 function getMaterialName(material) {
 	for (const key in materialNames) {
-			if (material.hasOwn(materialNames[key])) {
+			/* if (material.hasOwnProperty(materialNames[key])) */ 
+			if(Object.prototype.hasOwnProperty.call(material, materialNames[key])) {
 			return material[materialNames[key]];
 		} 
 	}
