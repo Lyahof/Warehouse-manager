@@ -1,10 +1,13 @@
+import { useSearchParams } from "react-router-dom";
+import { SiMicrosoftexcel } from "react-icons/si";
 import Spinner from "../../ui/Spinner";
 import Table from "../../ui/Table";
 import Menus from "../../ui/Menus";
 import MaterialItemRow from "./MaterialItemRow";
+import Button from "../../ui/Button";
 import { useMaterials } from "./useMaterials";
 import { useSearchContext } from "../../contexts/SearhContext";
-import { useSearchParams } from "react-router-dom";
+import exportToExcel from "../excel/exportToExcel";
 
 function MaterialsTable() {
   const { materials, isLoading } = useMaterials(); //Получает материалы из таблицы materials
@@ -59,7 +62,13 @@ function MaterialsTable() {
           <div>Артикул</div>
           <div></div>
           <div></div>
-          <div></div>
+          <Button
+            size="small"
+            variation="secondary"
+            onClick={() => exportToExcel(materials)}
+          >
+            <SiMicrosoftexcel />
+          </Button>
         </Table.Header>
 
         <Table.Body

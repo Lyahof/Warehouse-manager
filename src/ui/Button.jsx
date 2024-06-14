@@ -54,6 +54,12 @@ const Button = styled.button`
   box-shadow: var(--shadow-sm);
   ${(props) => sizes[props.size]}
   ${(props) => variations[props.variation]}
+
+  & svg {
+    width: 1.8rem;
+    height: 2rem;
+    color: green;
+  }
 `;
 
 Button.defaultProps = {

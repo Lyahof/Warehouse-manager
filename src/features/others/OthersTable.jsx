@@ -5,6 +5,9 @@ import OtherItemRow from "./OtherItemRow";
 import { useOthers } from "./useOthers";
 import { useSearchContext } from "../../contexts/SearhContext";
 import { useSearchParams } from "react-router-dom";
+import Button from "../../ui/Button";
+import { SiMicrosoftexcel } from "react-icons/si";
+import exportToExcel from "../excel/exportToExcel";
 
 function OthersTable() {
   const { others, isLoading } = useOthers();
@@ -46,7 +49,7 @@ function OthersTable() {
 
   return (
     <Menus>
-      <Table columns="2.7fr 0.8fr 1fr 0.8fr 0.45fr 0.45fr 0.4fr">
+      <Table columns="3.9fr 0.6fr 0.7fr 0.6fr 0.45fr 0.45fr 0.2fr">
         <Table.Header>
           <div>Наименование</div>
           <div>Количество</div>
@@ -54,7 +57,13 @@ function OthersTable() {
           <div>Артикул</div>
           <div></div>
           <div></div>
-          <div></div>
+          <Button
+            size="small"
+            variation="secondary"
+            onClick={() => exportToExcel(others)}
+          >
+            <SiMicrosoftexcel />
+          </Button>
         </Table.Header>
 
         <Table.Body
